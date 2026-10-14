@@ -7,7 +7,8 @@ function update() {
     y: (snake[0].y + direction.y + COUNT) % COUNT
   };
 
-  const eating = head.x === apple.x && head.y === apple.y;
+  const eating =
+    head.x === apple.x && head.y === apple.y;
 
   const body = eating ? snake : snake.slice(0, -1);
 
@@ -20,7 +21,10 @@ function update() {
 
   if (eating) {
     score += 10;
-    speed = Math.max(55, 115 - Math.floor(score / 50) * 5);
+    speed = Math.max(
+      55,
+      115 - Math.floor(score / 50) * 5
+    );
 
     if (score > best) {
       best = score;
